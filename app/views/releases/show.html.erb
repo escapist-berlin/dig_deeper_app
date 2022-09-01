@@ -1,0 +1,15 @@
+
+<div class="content-container">
+<%= link_to "Edit this release", edit_release_path(@release), class: "btn_main" %>
+<img class="release-img, url('<%= cl_image_path @release.cover_url %>')">
+  <h2><%= @release.title %></h2> %>
+    <p><%= @release.label %></p>
+    <p><%= @release.catalog_number %></p>
+    <p><%= @release.format %></p>
+    <p><%= @release.released %></p>
+    <p><%= @release.styles %></p>
+    <p><%= @release.tracklist %></p>
+</div>
+
+<div class="background-blur-img"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @release.cover_url %>')">

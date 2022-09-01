@@ -1,0 +1,101 @@
+
+// <h1><%= @release.artist %></h1>
+// <h2><%= @release.title %></h2>
+// <p><%= @release.label %></p>
+// <p><%= @release.catalog_number %></p>
+// <p><%= @release.format %></p>
+// <p><%= @release.released %></p>
+// <p><%= @release.styles %></p>
+// <p><%= @release.tracklist %></p>
+// <p><%= @release.cover_url %></p>
+.release_img{
+  display: flex;
+  overflow: scroll;
+  flex-direction: column;
+  align-items: flex-end;
+
+  }
+.background-blur-img{
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+}
+.btn_main {
+  margin-top: 1rem!important;
+  margin-bottom: 1rem!important;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 316px;
+  height: 58px;
+  background: linear-gradient(87.81deg, #5F9ADA -6.68%, #D05BB8 46.11%, #22A8B5 102.32%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  left: 850px;
+  right: 5px;
+  top: 10px;
+  font-family: 'Syne', sans-serif;
+  display: flex;
+  position: relative;
+
+  font-weight: 400;
+
+}
+.content-container{
+  background-color: black;
+  opacity: 0.7;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  color: white;
+  left: 850px;
+
+}
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  color: white;
+  left: 850px;
+
+
+
+  }
+  p {
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Syne', sans-serif;
+    font-weight: 400;
+    color: white;
+    flex-direction: column;
+    align-items: end;
+    left: 850px;
+
+    }

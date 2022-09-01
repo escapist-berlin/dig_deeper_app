@@ -1,0 +1,28 @@
+.sportlight_card{
+  background-color: lightgray;
+  width:90vw;
+  padding: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover_img{
+  height: 40px;
+}
+
+.sportlight_card h6 {
+  width: 22%;
+  border-right: 2px solid white;
+}
+
+.left{
+  margin-left: -6px;
+  position: relative;
+}
+
+.right{
+  margin-left: -100px;
+  position: relative;
+}

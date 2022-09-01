@@ -1,0 +1,19 @@
+<div class="container">
+
+<%= link_to "Back to the list", :back, class: "btn_main" %>
+ <%= simple_form_for [@list, @release] do |f| %>
+   <%= f.input :artist %>
+   <%= f.input :title %>
+   <%= f.input :label %>
+   <%= f.input :catalog_number %>
+   <%= f.input :format %>
+   <%= f.input :released %>
+   <%= f.input :styles %>
+   <%= f.input :tracklist %>
+   <%= f.input :link %>
+   <%= f.input :cover_url %>
+   <%= f.input :comment %>
+   <%= f.input :photo, as: :file %>
+   <%= f.submit %>
+ <% end %>
+</div>

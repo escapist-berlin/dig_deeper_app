@@ -1,0 +1,24 @@
+.btn_main {
+  margin-top: 1rem!important;
+  margin-bottom: 1rem!important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 316px;
+  height: 58px;
+  background: linear-gradient(87.81deg, #5F9ADA -6.68%, #D05BB8 46.11%, #22A8B5 102.32%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  position: absolute;
+  left: 900px;
+  top: 10px;
+  right: 50px;
+  font-family: 'Syne', sans-serif;
+
+}
