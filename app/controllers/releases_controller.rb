@@ -16,7 +16,6 @@ class ReleasesController < ApplicationController
     @release = Release.new(release_params)
     @list = List.find(params[:list_id])
     @release.list = @list
-    # response_from_api = discogsApi()
     @release.save
 
     redirect_to release_path(@release)

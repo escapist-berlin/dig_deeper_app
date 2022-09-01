@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   get "dashboard", to: "pages#dashboard"
 
+  post "results", to: "pages#save_btn", as: :save_result
   get "results", to: "pages#results"
-
-  get "test", to: "testsrequests#receiving"
-  # post "results", to: "pages#save_btn", as: :save_result
 end
