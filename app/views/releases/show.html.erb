@@ -5,7 +5,7 @@
 
 
       <div class="info-container">
-            <%= cl_image_tag @release.cover_url, height: 300, width: 400, crop: :fill, style: "margin-left: 94px;" %>
+            <%= cl_image_tag @release.cover_url, height: 300, width: 400, crop: :fill, style: "margin-left: 94px;" "border-radius: 100%" %>
             <div class="info-card">
               <h2><%= @release.title %></h2>
                   <p><%= @release.label %></p>
