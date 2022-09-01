@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: dig_deeper_app_production
-  username: dig_deeper_app
+  username:
   password: <%= ENV["DIG_DEEPER_APP_DATABASE_PASSWORD"] %>
