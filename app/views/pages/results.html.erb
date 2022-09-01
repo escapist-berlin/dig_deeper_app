@@ -28,7 +28,11 @@
         <% end %>
       </div>
 
-      <%= link_to "Save to Spotlight List", dashboard_path, class: "btn btn-primary my-3" %>
+      <form action="/results" method="post">
+        <input type="submit" name="commit" value="Create Restaurant">
+      </form>
+
+
     </div>
 
   </div>
