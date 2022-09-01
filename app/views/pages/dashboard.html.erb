@@ -1,11 +1,11 @@
-<div class="container">
+<div class="dashboard-container">
 
   <h1>Dashboard</h1>
 
   <div class="search-form">
     <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
       <%= f.input :title, input_html: {value: ""} %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
+      <%= f.submit "Search", class: "btn_main" %>
     <% end %>
   </div>
 <div class = "sportlight_card">
@@ -25,7 +25,7 @@
       <h6> <%= release.label %> </h6>
       <h6> <%= release.released %> </h6>
       <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn_main" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
