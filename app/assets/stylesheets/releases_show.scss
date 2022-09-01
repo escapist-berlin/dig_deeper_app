@@ -33,8 +33,12 @@
   gap: 8px;
   width: 316px;
   height: 58px;
-  background: linear-gradient(87.81deg, #5F9ADA -6.68%, #D05BB8 46.11%, #22A8B5 102.32%);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.25);
   border-radius: 8px;
   left: 850px;
   right: 5px;
@@ -57,7 +61,13 @@
 }
 
 
-
+.info-container{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 
 

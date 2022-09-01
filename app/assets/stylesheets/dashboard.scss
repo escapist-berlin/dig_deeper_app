@@ -1,0 +1,29 @@
+.dashboard-container{
+	background: linear-gradient(-45deg, #78aba6, #e9b97f, #f1aace);
+	background-size: cover;
+	animation: gradient 15s ease infinite;
+
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.h6 {
+display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  color: white;
+  left: 850px;
+}
+.btn_main{
+  width: 150px;
+}
