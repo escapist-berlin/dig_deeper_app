@@ -1,6 +1,6 @@
 <div class="container mb-5">
 
-  <%= link_to "Back to Dashboard", :back, class: "btn btn-primary my-3" %>
+  <%= link_to "Back to Dashboard", :back, class:"btn btn-primary", id: "btn-custom" %>
 
   <div class="d-flex justify-content-center m-3">
     <h1>Here is what we found:</h1>
@@ -29,7 +29,7 @@
       </div>
 
       <form action="/results" method="post">
-        <input type="submit" name="commit" value="Create Restaurant">
+        <input type="submit" name="commit" value="Save to Spotlight" class="btn btn-primary", id="btn-custom">
       </form>
 
 
