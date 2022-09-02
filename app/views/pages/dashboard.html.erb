@@ -19,9 +19,11 @@
 </div>
   <% @releases.each do |release| %>
     <div class = "sportlight_card">
+
     <img src='<%= release.cover_url  %>' alt="" class="cover_img">
       <h6> <%= release.artist %></h6>
-      <h6> <%= release.title %> </h6>
+      <h6> <%= link_to release.title, release_path(release.id) %> </h6>
+
       <h6> <%= release.label %> </h6>
       <h6> <%= release.released %> </h6>
       <div class="dropdown">
