@@ -32,6 +32,13 @@ class ReleasesController < ApplicationController
     redirect_to release_path(@release)
   end
 
+  def destroy
+    @release = Release.find(params[:id])
+    @release.destroy
+
+    redirect_to dashboard_path, status: :see_other
+  end
+
   private
 
   def release_params

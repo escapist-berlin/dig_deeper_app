@@ -1,25 +1,31 @@
 <div class="content-container">
 
   <div class="button-nav">
+    <%= link_to "Dashboard", dashboard_path, class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Edit this release", edit_release_path(@release), class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Back to " + @list.title , list_releases_path(@list), class:"btn btn-primary", id: "btn-custom" %>
   </div>
 
   <div class="info-container">
-    <%= cl_image_tag @release.cover_url, style: "margin-left: 94px;", class: "cover-bg" %>
+    <%= cl_image_tag @release.cover_url, class: "cover-bg" %>
     <div class="info-card">
-      <h2><%= @release.title %></h2>
-        <p><%= @release.label %></p>
-        <p><%= @release.catalog_number %></p>
-        <p><%= @release.format %></p>
-        <p><%= @release.released %></p>
-        <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
+      <h2><%= @release.artist %> - <%= @release.title %></h2>
+      <p><strong>Label: </strong><%= @release.label %> - <%= @release.catalog_number %></p>
+      <p><strong>Format: </strong><%= @release.format %></p>
+      <p><strong>Released: </strong><%= @release.released.strftime("%-d %b %Y") %></p>
+      <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
+      <p><strong>Styles: </strong><%= @style_array.join(", ") %></p>
 
+      <p><strong>Tracklist:</strong></p>
+      <p><%= @release.tracklist.gsub(/[^0-9a-z\., ]/i, '') %></p>
 
-        <%  @style_array.map do |style| %>
-          <p><%= style %></p>
-        <% end %>
-        <p><%= @release.tracklist %></p>
+      <%= link_to "Delete this release",
+            release_path(@release),
+            class:"btn btn-primary",
+            id: "btn-custom",
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+
     </div>
   </div>
 

@@ -11,3 +11,8 @@
   font-family: 'Syne', sans-serif;
   margin: 5px;
 }
+
+#btn-custom:hover {
+  background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
