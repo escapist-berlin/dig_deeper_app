@@ -1,31 +1,30 @@
 
-      <div class="content-container">
-              <%= link_to "Edit this release", edit_release_path(@release), class: "btn_main" %>
+<div class="content-container">
 
-
-
-      <div class="info-container">
-            <%= cl_image_tag @release.cover_url, height: 300, width: 400, crop: :fill, style: "margin-left: 94px;" %>
-            <div class="info-card">
-              <h2><%= @release.title %></h2>
-                  <p><%= @release.label %></p>
-                  <p><%= @release.catalog_number %></p>
-                  <p><%= @release.format %></p>
-                  <p><%= @release.released %></p>
-                  <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
-
-
-                  <%  @style_array.map do |style| %>
-                    <p><%= style %></p>
-                  <% end %>
-                  <p><%= @release.tracklist %></p>
-              </div>
-        </div>
-
+  <div class="button-nav">
+    <%= link_to "Edit this release", edit_release_path(@release), class:"btn btn-primary", id: "custom" %>
+    <%= link_to "Back to " + @list.title , list_releases_path(@list) %>
   </div>
 
+  <div class="info-container">
+    <%= cl_image_tag @release.cover_url, style: "margin-left: 94px;", class: "cover-bg" %>
+    <div class="info-card">
+      <h2><%= @release.title %></h2>
+        <p><%= @release.label %></p>
+        <p><%= @release.catalog_number %></p>
+        <p><%= @release.format %></p>
+        <p><%= @release.released %></p>
+        <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
 
 
+        <%  @style_array.map do |style| %>
+          <p><%= style %></p>
+        <% end %>
+        <p><%= @release.tracklist %></p>
+    </div>
+  </div>
+
+</div>
 
 <div class="background-blur-img"
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @release.cover_url %>')">
