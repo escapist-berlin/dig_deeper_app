@@ -1,8 +1,9 @@
 <div class="content-container-home">
   <div class="home-container">
     <h2 class="h2-home animate__animated animate__fadeInLeft">digDeeper</h2>
-    <%= link_to "Sign in", new_user_session_url %>
-    <%= link_to "Sign up", new_user_registration_url %>
+    <%= link_to "Dashboard", dashboard_path, class:"btn btn-primary", id: "btn-custom" %>
+    <%= link_to "Sign in", new_user_session_url, class:"btn btn-primary", id: "btn-custom" %>
+    <%= link_to "Sign up", new_user_registration_url, class:"btn btn-primary", id: "btn-custom" %>
 
 
   </div>
