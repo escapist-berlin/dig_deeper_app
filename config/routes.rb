@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "pages#home"
+  # get "sign up", to: "pages#sign up"
+  # get "log in", to: "pages#contact"
 
   resources :lists, only: [:new, :create, :edit, :update, :destroy] do
     resources :releases, only: [:index, :new, :create]
