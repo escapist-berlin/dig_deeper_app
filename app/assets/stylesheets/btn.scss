@@ -1,0 +1,13 @@
+.button-nav{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btn-custom {
+  background-color: transparent;
+  border: none;
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  margin: 5px;
+}
