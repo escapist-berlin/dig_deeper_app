@@ -1,0 +1,69 @@
+// Specific CSS for your home-page
+.background-image-home{
+  background-image: asset-url("background-image-records.jpg");
+  opacity: 85%;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.content-container-home{
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-container{
+overflow: hidden;
+position: absolute;
+z-index: 100;
+height: 100%;
+width: 100%;
+display: flex;
+align-items: center;
+}
+
+.h2-home{
+
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 150px;
+  color: white;
+  text-shadow: 4px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  ;
+  // line-height: 58px;
+  // /* identical to box height */
+  // text-align: center;
+  // color: black;
+  // /* Inside auto layout */
+  // flex: none;
+  // order: 0;
+  // flex-grow: 0;
+  // overflow: hidden;
+  // border-right: .15em solid black;
+  //  white-space: nowrap;
+  //  margin: 0 auto;
+   letter-spacing: .15em;
+   animation:
+    typing 5.0s steps(40),
+    blink-caret .75s step-end infinite;
+    margin-left: 39px;
+
+}
+
+@keyframes typing {
+  from { width: 0% }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
