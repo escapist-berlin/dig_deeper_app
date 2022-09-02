@@ -5,6 +5,7 @@ class ReleasesController < ApplicationController
 
   def show
     @release = Release.find(params[:id])
+    @list = List.find(@release.list_id)
   end
 
   def new
