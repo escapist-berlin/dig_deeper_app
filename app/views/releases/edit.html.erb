@@ -1,4 +1,6 @@
-<div class="container-edit">
+<div class="container-edit", style="cover">
+  <h1>Edit</h1>
+
 
 <%= link_to "Back to the list", :back, class: "btn_main"%>
  <%= simple_form_for [@list, @release], class: "edit-form" do |f| %>
@@ -16,4 +18,10 @@
    <%= f.input :photo, as: :file %>
    <%= f.submit %>
  <% end %>
+</div>
+
+
+
+
+
 </div>
