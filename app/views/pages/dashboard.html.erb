@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+<div class="container" style="cover">
 
   <h1>Dashboard</h1>
 
@@ -8,23 +8,26 @@
       <%= f.submit "Search", class:"btn btn-primary", id: "btn-custom" %>
     <% end %>
   </div>
-<div class = "sportlight_card">
-<img src='' alt="" class="cover_img">
-  <h6 class = "left">cover</h6>
-  <h6 class = "right">Artist</h6>
-  <h6>TITle</h6>
-  <h6>LABEL</h6>
-  <h6>RELEASED</h6>
-  <h6>TAGS</h6>
-</div>
-  <% @releases.each do |release| %>
-    <div class = "sportlight_card">
-    <img src='<%= release.cover_url  %>' alt="" class="cover_img">
-      <h6> <%= release.artist %></h6>
-      <h6> <%= release.title %> </h6>
-      <h6> <%= release.label %> </h6>
-      <h6> <%= release.released %> </h6>
-      <div class="dropdown">
+
+
+
+    <table>
+      <tr>
+        <th>COVER</th>
+        <th>Artist</th>
+        <th>TITLE</th>
+        <th>LABEL</th>
+        <th>RELEASED</th>
+        <th>TAGS</th>
+      </tr>
+      <% @releases.each do |release| %>
+      <tr>
+        <td><img src='<%= release.cover_url  %>' alt="" class="cover_img"></td>
+        <td><%= release.artist %></td>
+        <td><%= link_to release.title, release_path(release.id) %></td>
+        <td><%= release.label %></td>
+        <td><%= release.released %></td>
+        <td><div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
           TAGS
         </button>
@@ -33,10 +36,18 @@
           <li><a class="dropdown-item" href="#">Listen again</a></li>
           <li><a class="dropdown-item" href="#">I dont like</a></li>
         </ul>
-      </div>
-    </div>
+      </div></td>
+
+        </tr>
+      <% end %>
 
 
-  <% end %>
+
+    </table>
+
+
+
+
+
 
 </div>

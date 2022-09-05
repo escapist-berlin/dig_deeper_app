@@ -1,8 +1,12 @@
 .container-edit{
-
-	background: linear-gradient(-45deg, #03ffe6, #FF8C00, #FF0080);
+  background-image: asset-url("list-background.png");
 	background-size: cover;
-	animation: gradient 15s ease infinite;
+  background-color: #202020	;
+	// animation: gradient 15s ease infinite;
+  // background: linear-gradient(-60deg, #000000, #434343);
+	// background-size: 400% 400%;
+	// animation: gradient 15s ease infinite;
+
 }
 @keyframes gradient {
 	0% {
@@ -16,6 +20,10 @@
 	}
 }
 
+.form-control {
+background-color: transparent;
+text-decoration: white;
+}
 // .simple_form edit_release{
 //   width: 80%;
 //   padding: 12px 20px;
