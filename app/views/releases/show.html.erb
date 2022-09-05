@@ -16,18 +16,30 @@
       <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
       <p><strong>Styles: </strong><%= @style_array.join(", ") %></p>
 
-      <p><strong>Tracklist:</strong></p>
-      <p><%= @release.tracklist.gsub(/[^0-9a-z\., ]/i, '') %></p>
 
-      <%= link_to "Delete this release",
-            release_path(@release),
-            class:"btn btn-primary",
-            id: "btn-custom",
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
+
+      <p><strong>Tracklist:</strong></p>
+      <% JSON.parse(@release.tracklist).each_with_index do |track, index| %>
+        <small><%= index + 1 %>. <%= track %></small>
+        <br>
+      <% end %>
+
+      <p><strong>Your comment: </strong><%= @release.comment %></p>
+
+
+      <div>
+        <iframe style="border: 0; width: 100%; height: 120px;" src="<%= @release.link %>" seamless></iframe>
+      </div>
 
     </div>
   </div>
+
+  <%= link_to "Delete this release",
+    release_path(@release),
+    class:"btn btn-primary",
+    id: "btn-custom",
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
 
 </div>
 
