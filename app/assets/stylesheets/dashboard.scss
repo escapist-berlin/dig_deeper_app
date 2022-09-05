@@ -1,6 +1,5 @@
 
-.container{
-  background-image: asset-url("dashboard-background.png");
+.dashboard-container{
 	background-size: cover;
   background-color: #202020	;
 }
@@ -17,8 +16,14 @@
 	}
 }
 
+.form-inline {
+display: white;
+}
 
-
+#dashboard-heading{
+  color: white;
+  font-family: 'Syne', sans-serif;
+}
 .h6 {
 display: flex;
   flex-direction: column;
@@ -38,6 +43,8 @@ table{
 
 tr{
   margin-bottom: 10px;
+  font-display: white;
+
 }
 
 td{
@@ -45,4 +52,7 @@ td{
 }
 th{
   font-display: white;
+  font-display: white;
+
 }
+// .dashboard-table

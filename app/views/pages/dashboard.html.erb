@@ -1,17 +1,18 @@
-<div class="container" style="cover">
+<div class="dashboard-container">
 
-  <h1>Dashboard</h1>
+  <h1 id="dashboard-heading">Dashboard</h1>
 
-  <div class="search-form">
+
+  <div class="search-form" width="cover">
     <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :title, input_html: {value: ""} %>
+      <%= f.input :title, input_html: {value: ""}%>
       <%= f.submit "Search", class:"btn btn-primary", id: "btn-custom" %>
     <% end %>
   </div>
 
 
 
-    <table>
+    <table class="dashboard-table">
       <tr>
         <th>COVER</th>
         <th>Artist</th>
