@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .cover_img{
@@ -25,4 +26,8 @@
 .right{
   margin-left: -100px;
   position: relative;
+}
+
+.dashboard-table{
+  color: white;
 }
