@@ -3,7 +3,7 @@
   <div class="button-nav">
     <%= link_to "Dashboard", dashboard_path, class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Edit this release", edit_release_path(@release), class:"btn btn-primary", id: "btn-custom" %>
-    <%# <%= link_to "Back to " + @list.title , list_releases_path(@list), class:"btn btn-primary", id: "btn-custom" %>
+    <%= link_to "Back to " + @list.title , list_releases_path(@list), class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Delete this release", release_path(@release), class:"btn btn-primary", id: "btn-custom", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
   </div>
 
@@ -21,21 +21,11 @@
 
       <p><strong>Tracklist:</strong></p>
 
-      <% @tracklist.each do |track| %>
-        <small><%= track.position %> <%= track.title %>
-        <%= form_with model: track, url: track_path(track), method: :patch do |f| %>
-          <% if track.favorite? %>
-            <%= f.button nil do %>
-              <i class="fa-solid fa-heart"></i>
-            <% end %>
-          <% else %>
-            <%= f.button nil do %>
-              <i class="fa-regular fa-heart"></i>
-            <% end %>
-          <% end %>
-        <% end %>
-        </small>
-      <% end %>
+      <div data-controller="insert-in-tracklist">
+        <div data-insert-in-tracklist-target="tracklist">
+          <%= render "shared/tracklist", tracklist: @tracklist %>
+        </div>
+      </div>
 
       <p><strong>Your comment: </strong><%= @release.comment %></p>
 

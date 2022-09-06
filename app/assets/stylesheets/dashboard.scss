@@ -33,9 +33,6 @@ display: flex;
   color: white;
   left: 850px;
 }
-.btn_main{
-  width: 150px;
-}
 
 table{
   width: 100%;
@@ -54,5 +51,15 @@ th{
   font-display: white;
   font-display: white;
 
+}
+
+.search-form {
+  color: white;
+  .btn{
+    height: 62px;
+    width: 121px;
+    padding-top: 7px;
+    background-color: #202020;
+  }
 }
 // .dashboard-table

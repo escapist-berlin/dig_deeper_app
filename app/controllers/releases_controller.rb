@@ -8,7 +8,7 @@ class ReleasesController < ApplicationController
   def show
     @release = Release.find(params[:id])
     @list = List.find(@release.list_id)
-    @tracklist = Track.where(release_id: @release.id)
+    @tracklist = Track.where(release_id: @release.id).order(:position)
   end
 
   def new
