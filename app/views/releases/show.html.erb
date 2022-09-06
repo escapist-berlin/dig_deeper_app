@@ -21,22 +21,11 @@
 
       <p><strong>Tracklist:</strong></p>
 
-      <% @tracklist.each do |track| %>
-        <small><%= track.position %> <%= track.title %>
-
-          <% if track.favorite? %>
-            <%= link_to track_path(track), data: { turbo_method: :patch } do %>
-              <i class="fa-solid fa-heart" aria-hidden="true" target="_blank"></i>
-            <% end %>
-          <% else %>
-            <%= link_to track_path(track), data: { turbo_method: :patch } do %>
-              <i class="fa-regular fa-heart" aria-hidden="true" target="_blank"></i>
-            <% end %>
-          <% end %>
-
-
-        </small>
-      <% end %>
+      <div data-controller="insert-in-tracklist">
+        <div data-insert-in-tracklist-target="tracklist">
+          <%= render "shared/tracklist", tracklist: @tracklist %>
+        </div>
+      </div>
 
       <p><strong>Your comment: </strong><%= @release.comment %></p>
 
