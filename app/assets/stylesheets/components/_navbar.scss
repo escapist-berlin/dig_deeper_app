@@ -16,9 +16,10 @@
 }
 
 .nav-link{
+  display: inline-block;
   border-radius: 24px !important;
-  background: transparent;
+  background: white;
   &:hover {
-    background: #19A8B8 !important;
+    background: white;
 }
 }
