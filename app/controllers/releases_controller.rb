@@ -27,7 +27,6 @@ class ReleasesController < ApplicationController
 
   def edit
     @release = Release.find(params[:id])
-    @tracklist = JSON.parse(@release.tracklist)
   end
 
   def update
@@ -52,7 +51,7 @@ class ReleasesController < ApplicationController
       :title,
       :label,
       :catalog_number,
-      :format, 
+      :format,
       :released,
       :styles,
       :cover_url,
