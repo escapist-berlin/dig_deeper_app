@@ -1,3 +1,5 @@
+# require 'json'
+
 class ReleasesController < ApplicationController
   def index
     @releases = Release.where(list_id: params[:list_id])
@@ -25,9 +27,11 @@ class ReleasesController < ApplicationController
 
   def edit
     @release = Release.find(params[:id])
+    @tracklist = JSON.parse(@release.tracklist)
   end
 
   def update
+    raise
     @release = Release.find(params[:id])
     @release.update(release_params)
     redirect_to release_path(@release)
@@ -43,6 +47,19 @@ class ReleasesController < ApplicationController
   private
 
   def release_params
-    params.require(:release).permit(:artist, :title, :label, :catalog_number, :format, :released, :styles, :tracklist, :link, :cover_url, :photo, :comment)
+    params.require(:release).permit(
+      :artist,
+      :title,
+      :label,
+      :catalog_number,
+      :format, 
+      :released,
+      :styles,
+      :cover_url,
+      :photo,
+      :comment,
+      :link,
+      :favorite_tracks
+    )
   end
 end

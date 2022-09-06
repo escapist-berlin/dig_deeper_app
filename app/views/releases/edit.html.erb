@@ -1,4 +1,6 @@
-<div class="container-edit">
+<div class="container-edit", style="cover">
+  <h1 class="edit-title">Edit</h1>
+
 
 <%= link_to "Back to the list", :back, class: "btn_main"%>
  <%= simple_form_for [@list, @release], class: "edit-form" do |f| %>
@@ -9,10 +11,16 @@
    <%= f.input :format %>
    <%= f.input :released %>
    <%= f.input :styles %>
-   <%= f.input :link %>
+   <%= f.input :link, placeholder: "Paste here only the src link from bandcamp embedded player"%>
    <%= f.input :cover_url %>
    <%= f.input :comment %>
    <%= f.input :photo, as: :file %>
    <%= f.submit %>
  <% end %>
+</div>
+
+
+
+
+
 </div>

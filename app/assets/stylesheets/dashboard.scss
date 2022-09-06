@@ -1,9 +1,9 @@
-.dashboard-container{
-	background: linear-gradient(-60deg, #40E0D0, #FF8C00, #FF0080);
-	background-size: cover;
-	animation: gradient 15s ease infinite;
 
+.dashboard-container{
+	background-size: cover;
+  background-color: #202020	;
 }
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -14,6 +14,15 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.form-inline {
+display: white;
+}
+
+#dashboard-heading{
+  color: white;
+  font-family: 'Syne', sans-serif;
 }
 .h6 {
 display: flex;
@@ -27,3 +36,23 @@ display: flex;
 .btn_main{
   width: 150px;
 }
+
+table{
+  width: 100%;
+}
+
+tr{
+  margin-bottom: 10px;
+  font-display: white;
+
+}
+
+td{
+  padding-bottom: 20px
+}
+th{
+  font-display: white;
+  font-display: white;
+
+}
+// .dashboard-table

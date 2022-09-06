@@ -1,29 +1,24 @@
 .container-edit{
-
-	background: linear-gradient(-45deg, #03ffe6, #FF8C00, #FF0080);
 	background-size: cover;
-	animation: gradient 15s ease infinite;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  background-color: #202020	;
+
+
 }
 
-// .simple_form edit_release{
-//   width: 80%;
-//   padding: 12px 20px;
-//   margin: 8px 0;
-//   box-sizing: border-box;
-//   border-radius: 4px;
-//   border: 2px solid transparent;
-//   background-color: grey;
+
+.form-control {
+background-color: transparent;
+text-decoration: white;
+border-color: white;
+}
 
 
-// }
+.edit-form {
+  background-color: transparent;
+  text-decoration: white;
+  border-color: white;
+  }
+
+.edit-title{
+text-decoration: white;
+}

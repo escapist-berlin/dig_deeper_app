@@ -1,12 +1,17 @@
 <div class="content-container-home">
   <div class="home-container">
+  <div class="logo-title">
+    <%=image_tag "logo.png", width: "200px", class:"logo", id:"logo-home" %>
     <h2 class="h2-home animate__animated animate__fadeInLeft">digDeeper</h2>
+  </div>
+  <div>
     <%= link_to "Dashboard", dashboard_path, class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Sign in", new_user_session_url, class:"btn btn-primary", id: "btn-custom" %>
     <%= link_to "Sign up", new_user_registration_url, class:"btn btn-primary", id: "btn-custom" %>
+ </div>
 
-
+    </div>
   </div>
 </div>
 
-<div class="background-image-home"></div>"
+<div class="background-image-home"></div>
