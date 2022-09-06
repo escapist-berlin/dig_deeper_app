@@ -7,7 +7,8 @@ class ReleasesController < ApplicationController
 
   def show
     @release = Release.find(params[:id])
-    @list = @release.list
+    @list = List.find(@release.list_id)
+    @tracklist = Track.where(release_id: @release.id)
   end
 
   def new
@@ -51,9 +52,9 @@ class ReleasesController < ApplicationController
       :title,
       :label,
       :catalog_number,
-      :format, :released,
+      :format, 
+      :released,
       :styles,
-      :tracklist,
       :cover_url,
       :photo,
       :comment,

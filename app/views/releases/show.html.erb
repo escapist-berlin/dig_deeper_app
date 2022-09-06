@@ -17,15 +17,24 @@
       <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
       <p><strong>Styles: </strong><%= @style_array.join(", ") %></p>
 
+      <%=image_tag "underline.png", width: "200px", class:"underline" %>
+
       <p><strong>Tracklist:</strong></p>
 
-      <p><%= @release.tracklist.gsub(/[^0-9a-z\., ]/i, '') %></p>
-        <%=image_tag "underline.png", width: "200px", class:"underline" %>
-
-
-      <% JSON.parse(@release.tracklist).each_with_index do |track, index| %>
-        <small><%= index + 1 %>. <%= track %></small>
-        <br>
+      <% @tracklist.each do |track| %>
+        <small><%= track.position %> <%= track.title %>
+        <%= form_with model: track, url: track_path(track), method: :patch do |f| %>
+          <% if track.favorite? %>
+            <%= f.button nil do %>
+              <i class="fa-solid fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= f.button nil do %>
+              <i class="fa-regular fa-heart"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+        </small>
       <% end %>
 
       <p><strong>Your comment: </strong><%= @release.comment %></p>
@@ -33,7 +42,6 @@
       <div>
         <iframe style="border: 0; width: 100%; height: 120px;" src="<%= @release.link %>" seamless></iframe>
       </div>
-
 
     </div>
   </div>
