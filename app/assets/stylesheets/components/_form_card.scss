@@ -31,13 +31,15 @@
     height: 80px;
   }
 
- .btn{
-  height: 80px;
-  width: 508px;
-  border-radius: 30px;
-  background: -webkit-linear-gradient(#458BCD,#BC5496,#FFE1A6);
-  margin-left: 378px;
- }
+.form-actions {
+  .btn{
+    height: 80px;
+    width: 508px;
+    border-radius: 30px;
+    background: -webkit-linear-gradient(#458BCD,#BC5496,#FFE1A6);
+    margin-left: 378px;
+  }
+}
 
  h2 {
   text-align: center;

@@ -8,6 +8,6 @@ class TracksController < ApplicationController
       @track.favorite = true
     end
     @track.save
-    redirect_to release_path(@release)
+    redirect_to release_path(@release), status: :see_other
   end
 end
