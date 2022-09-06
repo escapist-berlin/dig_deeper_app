@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_123041) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_142548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,8 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_123041) do
     t.string "format"
     t.date "released"
     t.string "styles"
-    t.string "tracklist"
-    t.string "favorite_tracks"
     t.string "tag"
     t.string "link"
     t.string "comment"
@@ -68,6 +66,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_123041) do
     t.datetime "updated_at", null: false
     t.string "cover_url"
     t.index ["list_id"], name: "index_releases_on_list_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.boolean "favorite"
+    t.string "position"
+    t.bigint "release_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["release_id"], name: "index_tracks_on_release_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +94,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_123041) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lists", "users"
   add_foreign_key "releases", "lists"
+  add_foreign_key "tracks", "releases"
 end

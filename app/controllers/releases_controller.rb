@@ -6,6 +6,7 @@ class ReleasesController < ApplicationController
   def show
     @release = Release.find(params[:id])
     @list = List.find(@release.list_id)
+    @tracklist = Track.where(release_id: @release.id)
   end
 
   def new
@@ -42,6 +43,6 @@ class ReleasesController < ApplicationController
   private
 
   def release_params
-    params.require(:release).permit(:artist, :title, :label, :catalog_number, :format, :released, :styles, :tracklist, :link, :cover_url, :photo)
+    params.require(:release).permit(:artist, :title, :label, :catalog_number, :format, :released, :styles, :tracklist, :link, :cover_url, :photo, :comment)
   end
 end

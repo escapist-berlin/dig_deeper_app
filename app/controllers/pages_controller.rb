@@ -19,11 +19,13 @@ class PagesController < ApplicationController
   end
 
   def save_btn
+    # Making an API request
     @search_query = $super_search_query
     @release = discogs_api(@search_query)
     @cover_image = discogs_api_img(@search_query)
     @list = List.find_by(title: 'spotlight')
 
+    # Creating a new release
     new_api_release = Release.new(
       artist: @release.artists[0].name,
       title: @release.title,
@@ -32,12 +34,22 @@ class PagesController < ApplicationController
       format: @release.formats.first.name,
       released: @release.released,
       styles: @release.styles,
-      tracklist: @release.tracklist.map { |track| track.title },
       cover_url: @cover_image
     )
-    list = List.find_by(title: 'spotlight')
-    new_api_release.list = list
+    new_api_release.list = @list
     new_api_release.save
+
+    # Creating tracks
+    @release.tracklist.map do |track|
+      Track.create(
+        title: track.title,
+        favorite: false,
+        position: track.position,
+        release_id: new_api_release.id
+      )
+    end
+    # new_api_release.save
+
     redirect_to dashboard_path
   end
 

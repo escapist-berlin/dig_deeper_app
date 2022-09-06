@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :releases, only: [:show, :edit, :update, :destroy]
 
+  resources :tracks, only: [:update]
+
   get "dashboard", to: "pages#dashboard"
 
   post "results", to: "pages#save_btn", as: :save_result
