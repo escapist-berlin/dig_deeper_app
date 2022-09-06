@@ -30,7 +30,6 @@ class ReleasesController < ApplicationController
   end
 
   def update
-    raise
     @release = Release.find(params[:id])
     @release.update(release_params)
     redirect_to release_path(@release)
