@@ -22,9 +22,7 @@
       <p><strong>Tracklist:</strong></p>
 
       <div data-controller="insert-in-tracklist">
-        <div data-insert-in-tracklist-target="tracklist">
-          <%= render "shared/tracklist", tracklist: @tracklist %>
-        </div>
+        <%= render "shared/tracklist", tracklist: @tracklist %>
       </div>
 
       <p><strong>Your comment: </strong><%= @release.comment %></p>

@@ -2,6 +2,7 @@ class TracksController < ApplicationController
   def update
     @track = Track.find(params[:id])
     @release = Release.find(@track.release_id)
+    @tracklist = Track.where(release_id: @release.id).order(:position)
     if @track.favorite?
       @track.favorite = false
     else
@@ -15,7 +16,6 @@ class TracksController < ApplicationController
       else
         format.html { render "releases/show", status: :unprocessable_entity }
       end
-      format.json
     end
   end
 end
