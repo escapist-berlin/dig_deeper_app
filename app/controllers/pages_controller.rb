@@ -5,8 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @releases = Release.all
-    @list = List.find_by(title: 'spotlight', user:current_user)
+    @list = List.find_by(title: 'spotlight', user: current_user)
+    @releases = Release.where(list_id: @list.id).order(created_at: :desc)
   end
 
   def results
@@ -14,6 +14,7 @@ class PagesController < ApplicationController
     $super_search_query = @search_query
     @release = discogs_api(@search_query)
     @cover_image = discogs_api_img(@search_query)
+    @list = List.find_by(title: 'spotlight', user: current_user)
     if @release.nil? && @cover_image.nil?
       # TODO!!! flash-alert
     end

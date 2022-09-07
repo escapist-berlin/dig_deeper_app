@@ -29,14 +29,21 @@
   position: relative;
 }
 
-.dashboard-table{
+.dashboard-table {
   color: white;
-  a{
+  a {
     color: white;
   }
+
+  td {
+    padding-bottom: 0px;
   }
+}
 
 .dropdown{
+
+  top: 14px;
+
   .btn{
     height: 22px;
     width: 40px;
