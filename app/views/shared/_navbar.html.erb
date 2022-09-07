@@ -2,33 +2,25 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
         <%=image_tag "logo.png", width: "200px", class:"logo" %>
-</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-      <%= link_to "Dashboard", dashboard_path, class:"nav-link", id: "nav-font-color"%>
-      <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class:"nav-link", id: "nav-font-color"%>
+    <% if request.path == "/dashboard" %>
+      <h1 id="dashboard-heading">Dashboard</h1>
+    <% elsif request.path == "/results" %>
+      <h1 id="dashboard-heading">Here is what we found ..</h1>
+    <% else %>
+      <h1 id="dashboard-heading">Dig Deeper</h1>
+    <% end %>
 
+    <li class="nav-item dropdown">
+      <% if current_user && current_user.email == 'denis@gmail.com' %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/escapist-berlin", class: "avatar dropdown-toggle", id: "avatar-img", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
+      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+        <%= link_to "Dashboard", dashboard_path, class:"dropdown-item" %>
+        <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete}, class:"dropdown-item" %>
+      </div>
+    </li>
 
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/" />
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
-            </div>
-          </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
-      </ul>
-
-     <hr>
-
-    </div>
   </div>
 </div>
