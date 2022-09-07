@@ -1,41 +1,31 @@
-<div class="container mb-5">
-  <%= link_to "Back to Dashboard", :back, class:"btn btn-primary", id: "btn-custom" %>
-
-  <div class="d-flex justify-content-center m-3">
-    <h1>Here is what we found:</h1>
-  </div>
-
+<div class="content-container-results">
   <div class="results-cover-info">
+    <img src="<%= @cover_image %>" alt="release image", class="cover-bg">
+    <div class="results-found">
+    <h1>Here is what we found:</h1>
     <div class="m-3">
-      <img src="<%= @cover_image %>" alt="release image">
-    </div>
-
-    <div>
-      <div class="m-3">
-        <h2><%= @release.artists[0].name %> - <%= @release.title %></h2>
-        <p>Label: <%= @release.labels.first.name %> - <%= @release.labels.first.catno %></p>
-        <p>Format: <%= @release.formats.first.name %> - <%= @release.formats.first.descriptions %></p>
-        <p> Released: <%= @release.released %></p>
-        <p>Styles: <%= @release.styles %></p>
-      </div>
-
-      <div class="m-3">
-        <p><strong>Tracklist:</strong></p>
-        <% @release.tracklist.each_with_index do |track, index| %>
-            <small><%= index + 1 %>. <%= track.title %></small>
-            <br>
-        <% end %>
-      </div>
-
-      <form action="/results" method="post">
-        <input type="submit" name="commit" value="Save to Spotlight" class="btn btn-primary", id="btn-custom">
-      </form>
-
-
-    </div>
-
+    <h2><%= @release.artists[0].name %> - <%= @release.title %></h2>
+    <p>Label: <%= @release.labels.first.name %> - <%= @release.labels.first.catno %></p>
+    <p>Format: <%= @release.formats.first.name %> - <%= @release.formats.first.descriptions %></p>
+    <p> Released: <%= @release.released %></p>
+    <p>Styles: <%= @release.styles %></p>
+  </div>
+  <div class="m-3">
+      <p><strong>Tracklist:</strong></p>
+      <% @release.tracklist.each_with_index do |track, index| %>
+        <small><%= index + 1 %>. <%= track.title %></small>
+        <br>
+      <% end %>
   </div>
 
+    <form action="/results" method="post">
+      <input type="submit" name="commit" value="Save to Spotlight" class="btn-rest", id="btn-custom">
+      </form>
+         </div>
+      </div>
+      <div>
+</div>
 
-
+<div class="background-blur-img"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cover_image %>')">
 </div>

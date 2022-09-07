@@ -1,9 +1,9 @@
-<%= link_to "Create a new release", new_list_release_path, class: "button_main my-3" %>
+<%= link_to "Create a new release", new_list_release_path, class: "btn-rest" %>
 
 <div class="container">
  <% @releases.each do |release| %>
    <%= release.artist %>
-  <%# <%= release.title %> 
+  <%# <%= release.title %>
  <% end  %>
 
 

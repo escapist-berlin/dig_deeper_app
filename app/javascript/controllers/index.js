@@ -9,3 +9,6 @@ application.register("hello", HelloController)
 
 import InsertInTracklistController from "./insert_in_tracklist_controller"
 application.register("insert-in-tracklist", InsertInTracklistController)
+
+import SelectTagController from "./select_tag_controller"
+application.register("select-tag", SelectTagController)
