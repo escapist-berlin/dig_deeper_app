@@ -2,6 +2,10 @@
 .dashboard-container{
 	background-size: cover;
   background-color: #020f14;
+
+  div {
+    margin-bottom: 30px;
+  }
 }
 
 @keyframes gradient {
@@ -23,6 +27,10 @@ display: white;
 #dashboard-heading{
   color: white;
   font-family: 'Syne', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .h6 {
 display: flex;
@@ -69,10 +77,14 @@ th{
     position: absolute;
     right: 0px;
     top: 0;
-}
+  }
+
+  i {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .new{
   margin-left: 1124px;
 }
-// .dashboard-table

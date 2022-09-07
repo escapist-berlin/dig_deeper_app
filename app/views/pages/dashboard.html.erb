@@ -2,61 +2,47 @@
 
   <h1 id="dashboard-heading">Dashboard</h1>
 
-  <div class="new">
-    <%= link_to "Create a new release", new_list_release_path(@list), class: "btn btn-info" %>
-  </div>
+  <div class="container">
 
-
-
-  <div class="search-form" width="cover">
-    <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :title, input_html: {value: ""}, label: false, placeholder: "Seach for your Artists or Albums, for example Tory Lanez - playboy" %>
-      <%= f.button :button, class:"btn btn-dark", id: "btn-custom" do %>
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="search-form" width="cover">
+      <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :title, input_html: {value: ""}, label: false, placeholder: "Seach for your Artists or Albums, for example Tory Lanez - playboy" %>
+        <%= f.button :button, class:"btn btn-dark", id: "btn-custom" do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
+  <table class="dashboard-table container">
+    <tr>
+      <th>COVER</th>
+      <th>Artist</th>
+      <th>TITLE</th>
+      <th>LABEL</th>
+      <th>RELEASED</th>
+      <th>TAGS</th>
+    </tr>
+    <% @releases.each do |release| %>
+    <tr>
+      <td><img src='<%= release.cover_url  %>' alt="" class="cover_img"></td>
+      <td><%= release.artist %></td>
+      <td><%= link_to release.title, release_path(release.id) %></td>
+      <td><%= release.label %></td>
+      <td><%= release.released %></td>
+      <td><div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">I like <i class="fa-solid fa-heart"></i></a></li>
+        <li><a class="dropdown-item" href="#">Listen again <i class="fa-solid fa-headphones"></i></a></li>
+        <li><a class="dropdown-item" href="#">I dont like <i class="fa-solid fa-xmark"></i></a></li>
+      </ul>
+    </div></td>
 
-
-    <table class="dashboard-table">
-      <tr>
-        <th>COVER</th>
-        <th>Artist</th>
-        <th>TITLE</th>
-        <th>LABEL</th>
-        <th>RELEASED</th>
-        <th>TAGS</th>
       </tr>
-      <% @releases.each do |release| %>
-      <tr>
-        <td><img src='<%= release.cover_url  %>' alt="" class="cover_img"></td>
-        <td><%= release.artist %></td>
-        <td><%= link_to release.title, release_path(release.id) %></td>
-        <td><%= release.label %></td>
-        <td><%= release.released %></td>
-        <td><div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">I like <i class="fa-solid fa-heart"></i></a></li>
-          <li><a class="dropdown-item" href="#">Listen again <i class="fa-solid fa-headphones"></i></a></li>
-          <li><a class="dropdown-item" href="#">I dont like <i class="fa-solid fa-xmark"></i></a></li>
-        </ul>
-      </div></td>
-
-        </tr>
-      <% end %>
-
-
-
-    </table>
-
-
-
-
-
+    <% end %>
+  </table>
 
 </div>
