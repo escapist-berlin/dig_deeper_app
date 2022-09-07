@@ -57,7 +57,7 @@ class ReleasesController < ApplicationController
       :photo,
       :comment,
       :link,
-      :favorite_tracks
+      :tag
     )
   end
 end
