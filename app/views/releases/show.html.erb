@@ -3,6 +3,7 @@
   <div id="show-info-container">
     <%= cl_image_tag @release.cover_url, class: "cover-bg" %>
 
+
     <div class="info-card">
       <h2><%= @release.artist %> - <%= @release.title %></h2>
 
@@ -38,18 +39,23 @@
 
     </div>
 
+
     <div>
-      <div data-controller="select-tag">
+      <%# <div data-controller="select-tag"> %>
         <div>
           <%= simple_form_for(@release,
-          data: {select_tag_target: "tag"}) do |f| %>
+          data: {
+            select_tag_target: "tag",
+            turbo_method: :patch,
+            action: "submit->select-tag#update"
+            }) do |f| %>
             <%= f.input :tag, :input_html => {:rows => 10}, collection: ["✅ - I like", "🟡 - Listen again", "❌ - I don't like"] %>
             <button type="submit" class="btn btn-primary">
                 <i class="fa-regular fa-floppy-disk"></i>
             </button>
           <% end %>
         </div>
-      </div>
+      <%# </div> %>
 
 
       <div data-controller="insert-in-comment">
@@ -65,8 +71,8 @@
       </div>
     </div>
 
-  </div>
 
+  </div>
 </div>
 
 <div class="background-blur-img"
