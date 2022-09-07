@@ -1,9 +1,12 @@
 .button-nav{
   display: flex;
   justify-content: flex-end;
+
+  a {
+    margin-right: 5px;
+    margin-top: 5px;
+  }
 }
-
-
 
 // #btn-custom:hover {
 //   background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);

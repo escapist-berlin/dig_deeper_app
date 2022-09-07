@@ -6,10 +6,10 @@
   </div>
   <div>
     <%= link_to "Dashboard", dashboard_path, class:"btn-home", id:"btn-dashboard" %>
-    <%= link_to "Sign in", new_user_session_url, class:"btn-home", id:"btn-signin" %>
-    <%= link_to "Sign up", new_user_registration_url, class:"btn-home" %>
-
-
+    <% unless current_user %>
+      <%= link_to "Sign in", new_user_session_url, class:"btn-home", id:"btn-signin" %>
+      <%= link_to "Sign up", new_user_registration_url, class:"btn-home" %>
+    <% end %>
  </div>
     </div>
   </div>
