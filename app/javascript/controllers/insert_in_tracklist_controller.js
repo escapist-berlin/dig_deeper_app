@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["tracklist"]
 
   connect() {
-    console.log(this.tracklistTarget.action)
+    // console.log(this.tracklistTarget.action)
     // console.log(this.tracklistTarget)
   }
 
