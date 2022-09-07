@@ -11,6 +11,7 @@
 
 .cover_img{
   height: 40px;
+  border-radius: 20px;
 }
 
 .sportlight_card h6 {
@@ -30,7 +31,10 @@
 
 .dashboard-table{
   color: white;
-}
+  a{
+    color: white;
+  }
+  }
 
 .dropdown{
   .btn{
@@ -39,5 +43,3 @@
     padding-top: 0px;
   }
 }
-
-

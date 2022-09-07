@@ -55,11 +55,24 @@ th{
 
 .search-form {
   color: white;
-  .btn{
-    height: 62px;
-    width: 121px;
-    padding-top: 7px;
-    background-color: #202020;
+  width: 634px;
+  margin: 0 auto;
+  form{
+    position: relative;
   }
+
+  .btn{
+    height: 38px;
+    width: 30px;
+    padding-top: 5px;
+    background-color: black;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+}
+
+.new{
+  margin-left: 1124px;
 }
 // .dashboard-table

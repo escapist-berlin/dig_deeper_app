@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @releases = Release.all
+    @list = List.find_by(title: 'spotlight', user:current_user)
   end
 
   def results
