@@ -31,8 +31,15 @@ class ReleasesController < ApplicationController
 
   def update
     @release = Release.find(params[:id])
-    @release.update(release_params)
-    redirect_to release_path(@release)
+    respond_to do |format|
+      if @release.update(release_params)
+        format.html { redirect_to release_path(@release), status: :see_other }
+        # format.text { render partial: "shared/tracklist", locals: { tracklist: @tracklist }, formats: [:html] }
+      else
+        format.html { render "releases/show", status: :unprocessable_entity }
+      end
+    end
+
   end
 
   def destroy
@@ -57,7 +64,7 @@ class ReleasesController < ApplicationController
       :photo,
       :comment,
       :link,
-      :favorite_tracks
+      :tag
     )
   end
 end
