@@ -23,10 +23,12 @@
   color: grey;
   text-align: center;
   font-size: 35px;
-  top: 50%;
+  top: 45px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  
+  transform: translate(20%, 30%);
+  padding-left: 80px;
+  padding-top: 15px;
+
 
 
 }
@@ -44,7 +46,7 @@
   left: 0;
   width: 0;
   height: 100%;
-  background: #333;
+  background: #B0D9D1;
   transition: all .35s;
 }
 

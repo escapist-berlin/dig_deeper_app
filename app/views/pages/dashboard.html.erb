@@ -6,7 +6,7 @@
   <div class="search-form" width="cover">
     <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
       <%= f.input :title, input_html: {value: ""}%>
-      <%= f.submit "Search", class:"btn btn-primary", id: "btn-custom" %>
+      <%= f.submit "Search", class:"btn-rest", id: "btn-custom" %>
     <% end %>
   </div>
 
@@ -30,7 +30,7 @@
         <td><%= release.released %></td>
         <td><div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          
+
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" href="#">I like <i class="fa-solid fa-heart"></i></a></li>
