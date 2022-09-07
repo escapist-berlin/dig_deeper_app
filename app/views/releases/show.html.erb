@@ -37,13 +37,6 @@
         </div>
       <% end %>
 
-
-      <div class="button-nav">
-        <%= link_to "Edit this release", edit_release_path(@release), class:"btn-rest", id: "btn-custom" %>
-        <%= link_to "Back to " + @list.title , list_releases_path(@list), class:"btn-rest", id: "btn-custom" %>
-        <%= link_to "Delete this release", release_path(@release), class:"btn btn-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      </div>
-
       <p><strong>Your comment: </strong><%= @release.comment %></p>
 
     </div>
