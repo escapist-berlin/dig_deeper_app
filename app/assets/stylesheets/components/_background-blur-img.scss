@@ -1,0 +1,9 @@
+.background-blur-img{
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  animation: spin 8.0s linear infinite;
+}

@@ -8,34 +8,46 @@
   animation: spin 8.0s linear infinite;
 }
 
-// @keyframes spin {
-//    0% {
-//       transform: rotate(0deg);
-//    }
-//    100% {
-//       transform: rotate(360deg);
-//    }
-// }
-
-.underline{
-transform: rotate(20deg);
-width: 300px,
-}
-.container-mb-5{
-  background-color: black;
-  opacity: 0.7;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 100;
-  overflow: hidden;
+.results-found{
+  font-family: 'Syne', sans-serif;
 }
 
-.info-container{
-  width: 100%;
+.results-cover-info{
+  width: 95%;
   height: 80%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
+}
+
+#results-info-container{
+  width: 95%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+
+  h2 {
+    text-align: left;
+  }
+}
+#results-img{
+  transform: rotate(20deg);
+  width: 300px,
+  }
+
+.underline{
+transform: rotate(20deg);
+width: 300px,
+}
+
+.info-card {
+  font-family: 'Syne', sans-serif;
+
+  #what-list {
+    position: relative;
+    left: 245px;
+  }
 }
