@@ -1,31 +1,35 @@
-<div class="content-container-results">
+<div id="content-container-results">
   <div class="results-cover-info">
     <img src="<%= @cover_image %>" alt="release image", class="cover-bg">
     <div class="results-found">
     <div class="m-3">
     <h2><%= @release.artists[0].name %> - <%= @release.title %></h2>
-    <p>Label: <%= @release.labels.first.name %> - <%= @release.labels.first.catno %></p>
-    <p>Format: <%= @release.formats.first.name %> - <%= @release.formats.first.descriptions %></p>
-    <p> Released: <%= @release.released %></p>
-    <p>Styles: <%= @release.styles %></p>
+    <p><strong>Label: </strong><%= @release.labels.first.name %> - <%= @release.labels.first.catno %></p>
+    <p><strong>Format: </strong><%= @release.formats.first.name %></p>
+    <p><strong>Released: </strong><%= @release.released.to_date.strftime("%-d %b %Y") %></p>
+    <p><strong>Styles: </strong><%= @release.styles.join(", ") %></p>
   </div>
+
   <div class="m-3">
       <p><strong>Tracklist:</strong></p>
-      <% @release.tracklist.each_with_index do |track, index| %>
-        <small><%= index + 1 %>. <%= track.title %></small>
+      <% @release.tracklist.each do |track| %>
+        <small><%= track.position %> <%= track.title %></small>
         <br>
       <% end %>
   </div>
 
-    <form action="/results" method="post">
-      <input type="submit" name="commit" value="Save to Spotlight" class="btn-rest", id="btn-custom">
-    </form>
-    <%= link_to "Create manually", new_list_release_path(@list), class: "btn btn-info" %>
-         </div>
-      </div>
-      <div>
+  <form action="/results" method="post">
+    <input type="submit" name="commit" value="Save to Spotlight" class="btn-rest", id="btn-custom">
+  </form>
+
+  <%= link_to "Create manually", new_list_release_path(@list), class: "btn btn-info" %>
+        </div>
+    </div>
+    <div>
+
+
 </div>
 
-<div class="background-blur-img"
+<div class="background-blur-results"
   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cover_image %>')">
 </div>
