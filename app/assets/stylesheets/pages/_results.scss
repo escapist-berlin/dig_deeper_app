@@ -20,13 +20,14 @@
 
 .results-found{
   font-family: 'Syne', sans-serif;
+
   padding-left: 10em;
 }
 
 .results-cover-info{
   width: 95%;
   height: 80%;
-  display: -webkit-inline-box;
+  display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
@@ -61,5 +62,25 @@ width: 300px,
   #what-list {
     position: relative;
     left: 245px;
+  }
+}
+
+#results-nav-btn {
+  justify-content: center;
+  align-content: center;
+}
+
+@media (min-width: 1200px) {
+  .results-found {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 2880px) {
+  .results-found {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 75px;
   }
 }

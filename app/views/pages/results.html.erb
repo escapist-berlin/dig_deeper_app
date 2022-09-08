@@ -1,5 +1,7 @@
 <div id="content-container-results">
+
   <div class="results-cover-info">
+
     <img src="<%= @cover_image %>" alt="release image", class="cover-bg">
     <div class="results-found">
       <div class="m-3">
@@ -30,11 +32,14 @@
           <% end %>
       </div>
 
-      <form action="/results" method="post">
-        <input type="submit" name="commit" value="Save to Spotlight" class="btn-rest", id="btn-custom">
-      </form>
+      <div id="results-nav-btn">
+        <form action="/results" method="post">
+          <input type="submit" name="commit" value="Save to Spotlight" class="btn btn-primary">
+        </form>
 
-      <%= link_to "Create manually", new_list_release_path(@list), class: "btn btn-info" %>
+        <%= link_to "Create manually", new_list_release_path(@list), class: "btn btn-primary"%>
+      </div>
+
       </div>
   </div>
 </div>
