@@ -21,7 +21,8 @@
 
       <p><strong>Label: </strong><%= @release.label %> - <%= @release.catalog_number %></p>
       <p><strong>Format: </strong><%= @release.format %></p>
-      <p><strong>Released: </strong><%= @release.released.strftime("%-d %b %Y") %></p>
+      <p><strong>text: </strong><%= @release.released.class %></p>
+      <p><strong>Released: </strong><%= @release.released.strftime("%-d %b %Y") unless @release.released.nil? %></p>
       <% @style_array =  @release.styles.gsub(/[^0-9a-z ]/i, '').split %>
       <p><strong>Styles: </strong><%= @style_array.join(", ") %></p>
 
