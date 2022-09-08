@@ -1,8 +1,8 @@
 <div class="container-edit", style="cover">
   <div class="row justify-content-center">
     <div class="col-8 mb-3">
-      <h1 class="edit-title">Edit</h1>
-      <%= link_to "Back to the list", :back, class: "btn_main"%>
+    <%= link_to "Back to release", :back, class:"btn btn-secondary"%>
+      <h2 class="edit-title">Edit</h2>
       <%= simple_form_for [@list, @release], html: {id: "form-design"} do |f| %>
         <%= f.input :artist%>
         <%= f.input :title %>
