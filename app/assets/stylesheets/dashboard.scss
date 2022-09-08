@@ -90,3 +90,18 @@ th{
 .new{
   margin-left: 1124px;
 }
+
+@media (min-width: 1200px) {
+  .results-found {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 2880px) {
+  .results-found {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 75px;
+  }
+}
