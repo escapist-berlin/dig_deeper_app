@@ -5,8 +5,12 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @list = List.find_by(title: 'spotlight', user: current_user)
-    @releases = Release.where(list_id: @list.id).order(created_at: :desc)
+    if current_user
+      @list = List.find_by(title: 'spotlight', user: current_user)
+      @releases = Release.where(list_id: @list.id).order(created_at: :desc)
+    else
+      redirect_to root_path
+    end
   end
 
   def results
