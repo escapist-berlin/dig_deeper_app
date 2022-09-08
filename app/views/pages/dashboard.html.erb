@@ -22,22 +22,22 @@
       <th>TAGS</th>
     </tr>
     <% @releases.each do |release| %>
-    <tr>
-      <td><img src='<%= release.cover_url  %>' alt="" class="cover_img"></td>
-      <td><%= release.artist %></td>
-      <td><%= link_to release.title, release_path(release.id) %></td>
-      <td><%= release.label %></td>
-      <td><%= release.released %></td>
-      <td><div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">I like <i class="fa-solid fa-heart"></i></a></li>
-        <li><a class="dropdown-item" href="#">Listen again <i class="fa-solid fa-headphones"></i></a></li>
-        <li><a class="dropdown-item" href="#">I dont like <i class="fa-solid fa-xmark"></i></a></li>
-      </ul>
-    </div></td>
+      <tr>
+        <td><img src='<%= release.cover_url  %>' alt="" class="cover_img"></td>
+        <td><%= release.artist %></td>
+        <td><%= link_to release.title, release_path(release.id) %></td>
+        <td><%= release.label %></td>
+        <td><%= release.released %></td>
+        <td><div class="dropdown_tag">
+            <%= simple_form_for(release,
+              data: {
+              select_tag_target: "tag",
+              turbo_method: :patch,
+              action: "submit->select-tag#update"
+              }) do |f| %>
+              <%= f.input :tag,label: false, :input_html => {:rows => 10}, collection: ["✅ - I like", "🟡 - Listen again", "❌ - I don't like"] %>
+            <% end %>
+        </div></td>
 
       </tr>
     <% end %>

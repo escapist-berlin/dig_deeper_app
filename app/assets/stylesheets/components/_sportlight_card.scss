@@ -40,13 +40,14 @@
   }
 }
 
-.dropdown{
-
-  top: 14px;
-
-  .btn{
-    height: 22px;
-    width: 40px;
-    padding-top: 0px;
+.dropdown_tag{
+  top: 2px;
+  height: 14px;
+  width: 37px;
+  padding-top: 0px;
+  .form-select{
+    background-color: black;
+    height: 37px;
+    width: 70px;
   }
 }
