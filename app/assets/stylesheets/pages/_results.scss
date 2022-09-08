@@ -1,3 +1,4 @@
+
 #content-container-results {
   background-color: black;
   opacity: 0.7;
@@ -15,17 +16,17 @@
   background-size: cover;
   filter: blur(8px);
   -webkit-filter: blur(8px);
-  animation: spin 8.0s linear infinite;
 }
 
 .results-found{
   font-family: 'Syne', sans-serif;
+  padding-left: 10em;
 }
 
 .results-cover-info{
   width: 95%;
   height: 80%;
-  display: flex;
+  display: -webkit-inline-box;
   justify-content: space-around;
   align-items: center;
   color: white;
@@ -43,6 +44,7 @@
     text-align: left;
   }
 }
+
 #results-img{
   transform: rotate(20deg);
   width: 300px,
