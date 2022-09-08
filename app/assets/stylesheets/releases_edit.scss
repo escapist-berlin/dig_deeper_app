@@ -1,40 +1,42 @@
 .container-edit{
 	background-size: cover;
-  background-color: #202D40	;
+  background-color: #202020;
+  color: white;
+  .simple_form{
+    width: 675px;
+    margin-left: 110px;
+  }
 
-
-}
-
-
+ }
 // .form-control {
-// background-color: #020f14;
+// // background-color: #020f14;
 // text-decoration: white;
 // border-color: white;
 // color: white;
 //   &:focus {
-//     background-color: pink;
+//     background-color: white;
 //   }
 // }
 
-#form-design {
-  input, select {
-  background-color: #020f14 !important;
-  text-decoration: white;
-  border-color: white;
-  color: white;
-    &:focus {
-      background-color: pink;
-    }
-  }
-}
-h1 {
-  color: white;
-}
+// #form-design {
+//   input, select {
+//   background-color: #020f14 !important;
+//   text-decoration: white;
+//   border-color: white;
+//   color: white;
+//     &:focus {
+//       background-color: pink;
+//     }
+//   }
+// }
+// h1 {
+//   color: white;
+// }
 
-label {
-  color: white;
-}
+// label {
+//   color: white;
+// }
 
-.edit-title{
-text-decoration: white;
-}
+// .edit-title{
+// text-decoration: white;
+// }
