@@ -6,8 +6,19 @@
     <h2><%= @release.artists[0].name %> - <%= @release.title %></h2>
     <p><strong>Label: </strong><%= @release.labels.first.name %> - <%= @release.labels.first.catno %></p>
     <p><strong>Format: </strong><%= @release.formats.first.name %></p>
-    <p><strong>Released: </strong><%= @release.released.to_date.strftime("%-d %b %Y") %></p>
+
+    <p><strong>Released: </strong>
+      <% if @release.released.length == 4 %>
+        <%= @release.released %>
+      <% elsif @release.released.match(/.{2}$/).to_s == "00" %>
+        <%= @release.released %>
+      <% else %>
+        <%= @release.released.to_date.strftime("%-d %b %Y") %>
+      <% end %>
+    </p>
+
     <p><strong>Styles: </strong><%= @release.styles.join(", ") %></p>
+
   </div>
 
   <div class="m-3">
