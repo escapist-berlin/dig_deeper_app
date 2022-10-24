@@ -4,7 +4,7 @@
 
     <div class="search-form" width="cover">
       <%= simple_form_for :search, url: results_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-        <%= f.input :title, input_html: {value: ""}, label: false, placeholder: "Seach for your Artists or Albums, for example Tory Lanez - playboy" %>
+        <%= f.input :title, input_html: {value: ""}, label: false, placeholder: "Seach for your Artists or Albums, for example 'Rudolf C - Through Fusion'" %>
         <%= f.button :button, class:"btn btn-dark", id: "btn-custom" do %>
           <i class="fa-solid fa-magnifying-glass"></i>
         <% end %>
