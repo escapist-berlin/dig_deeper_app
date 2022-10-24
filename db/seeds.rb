@@ -11,20 +11,22 @@ List.destroy_all
 User.destroy_all
 
 puts "Creating a user"
-denis = User.create(email: "denis@gmail.com", password: "denis123")
+# denis = User.create(email: "denis@gmail.com", password: "denis123")
+test_user = User.create(email: "test@gmail.com", password: "test123")
+
 
 puts "Creating 3 default lists"
 
 heard = List.new(title: "heard")
-heard.user = denis
+heard.user = test_user
 heard.save!
 
 spotlight = List.new(title: "spotlight")
-spotlight.user = denis
+spotlight.user = test_user
 spotlight.save!
 
 buy = List.new(title: "buy")
-buy.user = denis
+buy.user = test_user
 buy.save!
 
 # puts "Creating 3 releases"
